@@ -27,7 +27,13 @@ class SesiController extends Controller
         ];
 
         if(Auth::attempt($infologin)){
-            return redirect('admin');
+            if(Auth::user()->role == 'admin'){
+                return redirect('admin');
+            }
+            if(Auth::user()->role == 'librarian'){
+                return redirect('admin/librarian');
+            }
+            
         }
         else
         {

@@ -16,6 +16,6 @@ Route::get('/home',function(){
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/admin',[AdminController::class, 'admin']);
-    Route::get('/admin',[AdminController::class, 'librarian']);
+    Route::get('/admin/librarian',[AdminController::class, 'librarian']);
     Route::get('/logout',[SesiController::class, 'logout']);
 });
